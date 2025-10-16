@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::#content})}">
+<head>
+    <title>Giriş Yap</title>
+</head>
+<body>
+    <div id="content">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center"><i class="fas fa-sign-in-alt"></i> Giriş Yap</h3>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/login}" method="post">
+                            <div th:if="${param.error}" class="alert alert-danger">
+                                Geçersiz kullanıcı adı veya şifre
+                            </div>
+                            <div th:if="${param.logout}" class="alert alert-info">
+                                Çıkış yapıldı
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Şifre</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-3">
+                            <p>Hesabınız yok mu? <a href="/register">Kayıt Ol</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

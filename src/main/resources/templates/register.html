@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::#content})}">
+<head>
+    <title>Kayıt Ol</title>
+</head>
+<body>
+    <div id="content">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center"><i class="fas fa-user-plus"></i> Kayıt Ol</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">Ad</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Soyad</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-posta</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Şifre</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="role" class="form-label">Rol</label>
+                                <select class="form-select" id="role" required>
+                                    <option value="">Rol Seçin</option>
+                                    <option value="ADMIN">Yönetici</option>
+                                    <option value="INSTRUCTOR">Öğretim Üyesi</option>
+                                    <option value="STUDENT">Öğrenci</option>
+                                </select>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-3">
+                            <p>Zaten hesabınız var mı? <a href="/login">Giriş Yap</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
